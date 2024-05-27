@@ -3,12 +3,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
+import matplotlib as mpl
 
 
 def plot_binary_grid_2d(data: np.ndarray) -> None:
     """plot 2D binary grid data 
     """
     list_cmap = ListedColormap(['w', 'k'], N=2)
+    # list_cmap = mpl.colormaps["plasma"]
     fig, ax = plt.subplots(1, 1, figsize=(3.375, 3))
     ax.imshow(data, cmap=list_cmap, vmin=0, vmax=1)
     ax.set_title('Zeros and Ones')
